@@ -4,10 +4,19 @@ import './App.css';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
+
+  const addExpense = (expense) => {
+    console.log("App received:", expense);
+
+    setExpenses([
+      ...expenses,
+      expense
+    ])
+  };
+
   return (
     <>
-      <h1>Expense Tracker</h1>
-      <ExpenseForm/>
+      <ExpenseForm addExpense={addExpense}/>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ExpenseForm = () => {
+const ExpenseForm = ({addExpense}) => {
     const [title, setTitle] = useState("");
     const [amount, setAmount] = useState(0);
     const [category, setCategory] = useState("");
@@ -9,7 +9,7 @@ const ExpenseForm = () => {
             <div>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='title' />
                 <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder='amount' />
-                <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder='category' />
+                <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder='category'/>
                 <button onClick={() => {
                     const expense = {
                         title,
@@ -18,6 +18,8 @@ const ExpenseForm = () => {
                     };
 
                     console.log(expense);
+
+                    addExpense(expense);
                 }}>Add Expense</button>
             </div>
         </>
