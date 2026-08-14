@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-const ExpenseItem = () => {
+const ExpenseItem = ({expense}) => {
   return (
-    <div>ExpenseItem</div>
+    <div>
+      <p>{expense.title}</p>
+      <p>₹{expense.amount}</p>
+      <p>{expense.category}</p>
+    </div>
   )
 }
 
