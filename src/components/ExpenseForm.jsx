@@ -20,6 +20,9 @@ const ExpenseForm = ({addExpense}) => {
                     console.log(expense);
 
                     addExpense(expense);
+                    setTitle("");
+                    setAmount("");
+                    setCategory("");
                 }}>Add Expense</button>
             </div>
         </>
