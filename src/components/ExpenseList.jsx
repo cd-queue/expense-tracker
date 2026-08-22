@@ -1,12 +1,16 @@
 import React from 'react';
 import ExpenseItem from './ExpenseItem';
 
-const ExpenseList = ({expenses}) => {
+const ExpenseList = ({expenses, deleteExpense}) => {
   return (
     <>
-      {expenses.map(item => {
+      {expenses.map((item, index) => {
         return (
-          <ExpenseItem expense={item}></ExpenseItem>
+          <ExpenseItem 
+          expense={item}
+          index={index}
+          deleteExpense={deleteExpense}
+          ></ExpenseItem>
         )
       })}
     </>

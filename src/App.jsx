@@ -16,10 +16,21 @@ function App() {
     ])
   };
 
+  const deleteExpense = (index) => {
+      const updatedExpenses = expenses.filter((expense, i) => {
+        return i!== index;
+      });
+
+      setExpenses(updatedExpenses)
+  };
+
   return (
     <>
       <ExpenseForm addExpense={addExpense}/>
-      <ExpenseList expenses={expenses}/>
+      <ExpenseList 
+      expenses={expenses}
+      deleteExpense={deleteExpense}
+      />
       <ExpenseSummary expenses={expenses}/>
     </>
   )
