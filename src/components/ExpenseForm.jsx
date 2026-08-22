@@ -11,6 +11,11 @@ const ExpenseForm = ({addExpense}) => {
                 <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} placeholder='amount' />
                 <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder='category'/>
                 <button onClick={() => {
+
+                    if(title === "" || amount <= 0 || category === "")
+                    {
+                        return alert("Form is invalid")
+                    }
                     const expense = {
                         title,
                         amount,
