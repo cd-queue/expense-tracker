@@ -9,7 +9,15 @@ const ExpenseForm = ({addExpense}) => {
             <div>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='title' />
                 <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} placeholder='amount' />
-                <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder='category'/>
+                <select  value={category} onChange={(e) => setCategory(e.target.value)}>
+                    <option value="">Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+
                 <button onClick={() => {
 
                     if(title === "" || amount <= 0 || category === "")
