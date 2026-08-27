@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './ExpenseForm.css';
 
 const ExpenseForm = ({addExpense}) => {
     const [title, setTitle] = useState("");
@@ -6,7 +7,8 @@ const ExpenseForm = ({addExpense}) => {
     const [category, setCategory] = useState("");
     return (
         <>
-            <div>
+            <div className='form'>
+                <h2>Add Expense</h2>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='title' />
                 <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} placeholder='amount' />
                 <select  value={category} onChange={(e) => setCategory(e.target.value)}>

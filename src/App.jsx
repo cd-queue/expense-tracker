@@ -17,21 +17,31 @@ function App() {
   };
 
   const deleteExpense = (index) => {
-      const updatedExpenses = expenses.filter((expense, i) => {
-        return i!== index;
-      });
+    const updatedExpenses = expenses.filter((expense, i) => {
+      return i !== index;
+    });
 
-      setExpenses(updatedExpenses)
+    setExpenses(updatedExpenses)
   };
 
   return (
     <>
-      <ExpenseForm addExpense={addExpense}/>
-      <ExpenseList 
-      expenses={expenses}
-      deleteExpense={deleteExpense}
-      />
-      <ExpenseSummary expenses={expenses}/>
+      <div className='app'>
+        <h1>Expense Tracker</h1>
+        <p>Track your daily spending</p>
+
+        <div className='top-section'>
+
+          <ExpenseForm addExpense={addExpense} />
+          <ExpenseSummary expenses={expenses} />
+
+        </div>
+
+        <ExpenseList
+          expenses={expenses}
+          deleteExpense={deleteExpense}
+        />
+      </div>
     </>
   )
 }

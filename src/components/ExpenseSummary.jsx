@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
+import './ExpenseSummary.css';
 
 const ExpenseSummary = ({ expenses }) => {
   const total = expenses.reduce((sum, expense) => {
     return sum + expense.amount;
   }, 0)
   return (
-    <div>Total: ₹{total}</div>
+    <>
+      <div className='summary'>
+        <h2>Summary</h2>
+        <p className='total'>Total: ₹{total}</p>
+      </div>
+    </>
   )
 }
 
