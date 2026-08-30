@@ -25,24 +25,27 @@ function App() {
   };
 
   return (
-    <>
       <div className='app'>
-        <h1>Expense Tracker</h1>
-        <p>Track your daily spending</p>
+        <header className='header'>
+          <span className='header-sub'>LEDGER / 2026</span>
+          <h1>Expense Tracker</h1>
+          <p>Track your daily spending</p>
+        </header>
 
-        <div className='top-section'>
-
-          <ExpenseForm addExpense={addExpense} />
+        {/* Main Grid Container containing all 4 direct child cards */}
+        <div className='deshboard-grid'>
           <ExpenseSummary expenses={expenses} />
-
+          <ExpenseForm addExpense={addExpense} />
+          <div className='by-category'>
+            <h3>BY CATEGORY</h3>
+            {/* Category content goes here  */}
+          </div>
+          <ExpenseList
+            expenses={expenses}
+            deleteExpense={deleteExpense}
+          />
         </div>
-
-        <ExpenseList
-          expenses={expenses}
-          deleteExpense={deleteExpense}
-        />
       </div>
-    </>
   )
 }
 

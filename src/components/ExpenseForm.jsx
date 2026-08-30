@@ -7,10 +7,11 @@ const ExpenseForm = ({addExpense}) => {
     const [category, setCategory] = useState("");
     return (
         <>
-            <div className='form'>
-                <h2>Add Expense</h2>
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='title' />
-                <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} placeholder='amount' />
+            <div className='expense-form'>
+                <h2>NEW ENTRY</h2>
+
+                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Spent on' />
+                <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} placeholder='Amount in ₹' />
                 <select  value={category} onChange={(e) => setCategory(e.target.value)}>
                     <option value="">Select Category</option>
                     <option value="Food">Food</option>
@@ -38,7 +39,10 @@ const ExpenseForm = ({addExpense}) => {
                     setTitle("");
                     setAmount("");
                     setCategory("");
-                }}>Add Expense</button>
+                }}>
+                    <span>+</span>
+                    LOG IT
+                </button>
             </div>
         </>
     )
