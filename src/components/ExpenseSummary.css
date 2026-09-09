@@ -1,12 +1,30 @@
-.summary{
-    border: 2px solid black;
-    width: 40%;
-    margin: 10px;
-    text-align: center;
+.summary {
+  width: 100%;
+  height: 100%;
+  min-height: 275px;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #363533;
+  border-radius: 5px;
+  background: #171716;
 }
 
-.total{
-    margin-top: 50px;
+.summary > p {
+  color: #a5a5a5;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
+.total-box {
+  display: flex;
+  align-items: center;
+  height: calc(100% - 18px);
+}
 
+.total {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: -2px;
+}

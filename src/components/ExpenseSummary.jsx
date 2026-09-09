@@ -8,8 +8,10 @@ const ExpenseSummary = ({ expenses }) => {
   return (
     <>
       <div className='summary'>
-        <h2>Summary</h2>
-        <p className='total'>Total: ₹{total}</p>
+        <p>TOTAL</p>
+        <div className='total-box'>
+        <p className='total'>₹{total}</p>
+        </div>
       </div>
     </>
   )
